@@ -1,0 +1,36 @@
+diff -uNr node-v16.14.2.dist/deps/v8/src/base/logging.h node-v16.14.2/deps/v8/src/base/logging.h
+--- node-v16.14.2.dist/deps/v8/src/base/logging.h	2022-03-17 14:59:26.000000000 -0700
++++ node-v16.14.2/deps/v8/src/base/logging.h	2023-11-08 20:35:37.971021044 -0800
+@@ -15,6 +15,8 @@
+ #include "src/base/immediate-crash.h"
+ #include "src/base/template-utils.h"
+ 
++#include <cstdint>
++
+ V8_BASE_EXPORT V8_NOINLINE void V8_Dcheck(const char* file, int line,
+                                           const char* message);
+ 
+diff -uNr node-v16.14.2.dist/deps/v8/src/base/macros.h node-v16.14.2/deps/v8/src/base/macros.h
+--- node-v16.14.2.dist/deps/v8/src/base/macros.h	2023-11-08 20:29:15.646278752 -0800
++++ node-v16.14.2/deps/v8/src/base/macros.h	2023-11-08 20:29:59.852555217 -0800
+@@ -12,6 +12,8 @@
+ #include "src/base/logging.h"
+ #include "src/base/platform/wrappers.h"
+ 
++#include <cstdint>
++
+ // No-op macro which is used to work around MSVC's funky VA_ARGS support.
+ #define EXPAND(x) x
+ 
+diff -uNr node-v16.14.2.dist/deps/v8/src/inspector/v8-string-conversions.h node-v16.14.2/deps/v8/src/inspector/v8-string-conversions.h
+--- node-v16.14.2.dist/deps/v8/src/inspector/v8-string-conversions.h	2022-03-17 14:59:26.000000000 -0700
++++ node-v16.14.2/deps/v8/src/inspector/v8-string-conversions.h	2023-11-08 21:01:46.665366020 -0800
+@@ -7,6 +7,8 @@
+ 
+ #include <string>
+ 
++#include <cstdint>
++
+ // Conversion routines between UT8 and UTF16, used by string-16.{h,cc}. You may
+ // want to use string-16.h directly rather than these.
+ namespace v8_inspector {
